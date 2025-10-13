@@ -1,30 +1,57 @@
 {
-    "name": "Dating App",
-    "short_name": "Dating",
-    "start_url": "/",
+    "name": "Sadcore",
+    "short_name": "Sadcore",
+    "description": "Free and independent dating app, created by Quark Punk",
+    "version": "0.1-alpha",
+    "start_url": "/sadcore/",
+    "scope": "/sadcore/",
+    "lang": "ru-RU",
+    "orientation": "portrait",
     "display": "standalone",
     "background_color": "#000000",
     "theme_color": "#000000",
+    "display_override": ["window-controls-overlay"],
     "icons": [
         {
-          "src": "/favicon.svg",
-          "sizes": "any"
-        },
-        {
-            "src": "/favicon-48px.png",
-            "sizes": "48x48",
-            "type": "image/png"
-        },
-        {
-            "src": "/favicon-32px.png",
+            "src": "/sadcore/favicon-32px.png",
             "sizes": "32x32",
             "type": "image/png"
         },
         {
-            "src": "/favicon-16px.png",
-            "sizes": "16x16",
+            "src": "/sadcore/favicon-48px.png",
+            "sizes": "48x48",
+            "type": "image/png"
+        },
+        {
+            "src": "/sadcore/favicon-72px.png",
+            "sizes": "72x72",
+            "type": "image/png"
+        },
+        {
+            "src": "/sadcore/favicon-96px.png",
+            "sizes": "96x96",
+            "type": "image/png"
+        },
+        {
+            "src": "/sadcore/favicon-144px.png",
+            "sizes": "144x144",
+            "type": "image/png"
+        },
+        {
+            "src": "/sadcore/favicon-192px.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/sadcore/favicon-256px.png",
+            "sizes": "256x256",
+            "type": "image/png"
+        },
+        {
+            "purpose": "maskable",
+            "src": "/sadcore/favicon-512px.png",
+            "sizes": "512x512",
             "type": "image/png"
         }
-    ],
-    "splash_pages": null
+    ]
 }

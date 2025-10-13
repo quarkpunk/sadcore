@@ -1,13 +1,16 @@
-const CACHE_NAME = 'sadcore-' + import.meta.env.PACKAGE_VERSION;
-const API_CACHE_NAME = 'sadcore-api-' + import.meta.env.PACKAGE_VERSION;
+// that auto generated sw
+const BASE_URL = '/sadcore/';
+const PACKAGE_VERSION = '0.1-alpha';
+const BUILD_TIME = '2025-10-13T00:10:25.179Z';
+const CACHE_NAME = `sadcore-${PACKAGE_VERSION}`;
 
-// resources to cache during installation
+// Resources to cache during installation
 const PRECACHE_RESOURCES = [
-    '/',
-    '/index.html',
-    '/assets/index.css',
-    '/assets/index.js',
-    '/manifest.json'
+    BASE_URL,
+    BASE_URL + 'index.html',
+    BASE_URL + 'assets/index.css',
+    BASE_URL + 'assets/index.js',
+    BASE_URL + 'manifest.json'
 ];
 
 // caching strategy: network first, cache later (for HTML)
@@ -46,11 +49,11 @@ const cacheFirst = async (request) => {
 
 // setup service worker
 self.addEventListener('install', (event) => {
-    console.log('Service Worker: Installing...');
+    console.log('service worker: installing...');
     event.waitUntil(
         caches.open(CACHE_NAME)
             .then((cache) => {
-                console.log('Service Worker: Caching app shell');
+                console.log('service worker: caching app shell');
                 return cache.addAll(PRECACHE_RESOURCES);
             })
             .then(() => self.skipWaiting())
@@ -59,14 +62,13 @@ self.addEventListener('install', (event) => {
 
 // activate service worker
 self.addEventListener('activate', (event) => {
-    console.log('Service Worker: Activating...');
+    console.log('service worker: Activating...');
     event.waitUntil(
         caches.keys().then((cacheNames) => {
             return Promise.all(
                 cacheNames.map((cacheName) => {
-                    // delete old caches
-                    if (cacheName !== CACHE_NAME && cacheName !== API_CACHE_NAME) {
-                        console.log('Service Worker: Deleting old cache', cacheName);
+                    if (cacheName !== CACHE_NAME) {
+                        console.log('service worker: deleting old cache', cacheName);
                         return caches.delete(cacheName);
                     }
                 })
@@ -77,7 +79,6 @@ self.addEventListener('activate', (event) => {
 
 self.addEventListener('fetch', (event) => {
     const { request } = event;
-    const url = new URL(request.url);
 
     if(request.destination === 'document'){
         event.respondWith(networkFirst(request));
@@ -97,7 +98,7 @@ self.addEventListener('fetch', (event) => {
 
 self.addEventListener('sync', (event) => {
     if (event.tag === 'background-sync') {
-        console.log('Background sync triggered');
+        console.log('background sync triggered');
     }
 });
 
@@ -107,7 +108,7 @@ self.addEventListener('message', (event) => {
     }
     if (event.data && event.data.type === 'GET_VERSION') {
         event.ports[0].postMessage({
-            version: import.meta.env.PACKAGE_VERSION || '0.0.0',
+            version: PACKAGE_VERSION || 'none',
             cacheName: CACHE_NAME
         });
     }
