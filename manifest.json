@@ -11,6 +11,15 @@
     "background_color": "#000000",
     "theme_color": "#000000",
     "display_override": ["window-controls-overlay"],
+    "handle_links": "preferred",
+    "launch_handler": {
+        "client_mode": "focus-existing"
+    },
+    "url_handlers": [
+        {
+            "origin": "https://quarkpunk.github.io"
+        }
+    ],
     "icons": [
         {
             "src": "/sadcore/favicon-32px.png",

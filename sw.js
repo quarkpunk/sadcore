@@ -1,7 +1,7 @@
 // that auto generated sw
 const BASE_URL = '/sadcore/';
 const PACKAGE_VERSION = '0.1-alpha';
-const BUILD_TIME = '2025-10-13T00:10:25.179Z';
+const BUILD_TIME = '2025-10-13T14:23:01.712Z';
 const CACHE_NAME = `sadcore-${PACKAGE_VERSION}`;
 
 // Resources to cache during installation
@@ -58,6 +58,13 @@ self.addEventListener('install', (event) => {
             })
             .then(() => self.skipWaiting())
     );
+    if('registerProtocolHandler' in navigator) {
+        // navigator.registerProtocolHandler(
+        //     'web+sadcore',
+        //     `${BASE_URL}?authtg=%s`,
+        //     'Sadcore Dating App'
+        // );
+    }
 });
 
 // activate service worker
