@@ -2,7 +2,7 @@
     "name": "Sadcore",
     "short_name": "Sadcore",
     "description": "Free and independent dating app, created by Quark Punk",
-    "version": "0.1-alpha",
+    "version": "0.1.0-alpha",
     "start_url": "/sadcore/",
     "scope": "/sadcore/",
     "lang": "ru-RU",
