@@ -1,7 +1,7 @@
 // that auto generated sw
 const BASE_URL = '/sadcore/';
 const PACKAGE_VERSION = '0.1.0-alpha';
-const BUILD_TIME = '2025-10-15T20:55:50.610Z';
+const BUILD_TIME = '2025-10-16T20:55:00.415Z';
 const CACHE_NAME = `sadcore-${PACKAGE_VERSION}`;
 
 // Resources to cache during installation
@@ -86,6 +86,12 @@ self.addEventListener('activate', (event) => {
 
 self.addEventListener('fetch', (event) => {
     const { request } = event;
+    const url = new URL(request.url);
+
+    // no cache API requests
+    if(url.pathname.startsWith('/api/')){
+        return;
+    }
 
     if(request.destination === 'document'){
         event.respondWith(networkFirst(request));
