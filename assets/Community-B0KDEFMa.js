@@ -1,0 +1,1 @@
+import{_ as t,d as s,e as o,h as a,t as c}from"./main-B2M20k_z.js";const n={},r={class:"col flex-center",style:{margin:"auto"},id:"noevents"},i={class:"gray"};function l(e,_){return o(),s("div",r,[a("p",i,c(e.$t("pages.community.placeholder")),1)])}const m=t(n,[["render",l]]);export{m as default};
