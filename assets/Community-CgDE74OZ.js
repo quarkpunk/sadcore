@@ -1,0 +1,1 @@
+import{_ as t,c as s,d as o,g as c,t as a}from"./main-r-KjY38Z.js";const n={},r={class:"col flex-center",style:{margin:"auto"},id:"noevents"},i={class:"gray"};function l(e,_){return o(),s("div",r,[c("p",i,a(e.$t("pages.community.placeholder")),1)])}const m=t(n,[["render",l]]);export{m as default};
