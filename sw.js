@@ -1,7 +1,7 @@
 // that auto generated sw
 const BASE_URL = '/sadcore/';
 const PACKAGE_VERSION = '0.1.1-alpha';
-const BUILD_TIME = '2025-10-18T15:11:57.797Z';
+const BUILD_TIME = '2025-10-18T15:39:21.019Z';
 const CACHE_NAME = `sadcore-${PACKAGE_VERSION}`;
 
 // Resources to cache during installation
