@@ -1,0 +1,1 @@
+import{_ as n,c as o,o as r,a as t}from"./main-DaUflbHC.js";const s={};function a(c,e){return r(),o("div",null,[...e[0]||(e[0]=[t("h2",null,"Admin Home",-1)])])}const d=n(s,[["render",a]]);export{d as default};
